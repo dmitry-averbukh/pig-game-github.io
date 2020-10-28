@@ -25,6 +25,9 @@ function init() {
     panel1.classList.remove("active")
 
     panel0.classList.add("active")
+
+    document.querySelector(".btn-roll").style.display = "block"
+    document.querySelector(".btn-keep").style.display = "block"
 }
 
 function hideDice() {
@@ -33,6 +36,7 @@ function hideDice() {
 
 document.querySelector(".btn-roll").addEventListener("click", function () {
     if (gameOn) {
+        document.querySelector(".player-" + activePlayer + "-panel").classList.remove("shake")
         dice = Math.floor(Math.random() * 6) + 1
         var diceElem = document.querySelector(".dice")
         diceElem.style.display = "block"
@@ -41,6 +45,7 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
             roundScore += dice
             document.querySelector("#current-" + activePlayer).textContent = roundScore
         } else {
+            document.querySelector(".player-" + activePlayer + "-panel").classList.add("shake")
             nextPlayer()
         }
     }
@@ -50,7 +55,7 @@ document.querySelector(".btn-keep").addEventListener("click", function () {
     if (gameOn) {
         scores[activePlayer] += roundScore
         document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer]
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= 10) {
             gameOver()
         } else {
             nextPlayer()
@@ -65,7 +70,6 @@ function nextPlayer() {
     roundScore = 0
     document.querySelector(".player-0-panel").classList.toggle("active")
     document.querySelector(".player-1-panel").classList.toggle("active")
-    // hideDice()
 }
 
 document.querySelector(".btn-new").addEventListener("click", init)
@@ -74,6 +78,8 @@ function gameOver() {
     gameOn = false
     document.querySelector("#name-" + activePlayer).textContent = "Winner!"
     document.querySelector(".player-" + activePlayer + "-panel").classList.add("winner")
+    document.querySelector(".btn-roll").style.display = "none"
+    document.querySelector(".btn-keep").style.display = "none"
     hideDice()
 }
 

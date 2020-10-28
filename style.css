@@ -16,6 +16,22 @@ body {
     overflow: hidden;
 }
 
+#main {
+    font-size: 80px;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    position: fixed;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Kefa;
+}
+
+
 .player-1-panel,
 .player-0-panel {
     width: 50%;
@@ -34,14 +50,14 @@ body {
     margin-bottom: 10px;
     position: relative;
     font-weight: 100;
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     font-family: Kefa;
 }
 
 .player-score {
     text-align: center;
     font-size: 80px;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 120px;
     font-weight: 100;
     font-family: Kefa;
@@ -55,7 +71,7 @@ body {
     margin-top: 20px;
     margin-bottom: 10px;
     position: relative;
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 100;
     font-family: Kefa;
 }
@@ -63,7 +79,7 @@ body {
 .player-current-score {
     text-align: center;
     font-size: 50px;
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 130px;
     font-weight: 100;
     font-family: Kefa;
@@ -77,7 +93,7 @@ body {
     font-weight: 1000;
 }
 
-.player-current-box{
+.player-current-box {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     width: 40%;
@@ -94,17 +110,25 @@ button {
     background: none;
     border: none;
     font-family: Kefa;
-    font-size: 20px;
+    font-size: 27px;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 300;
     transition: background-color 0.3s, color 0.3s;
-    text-shadow: black 0 0 3px;
+    text-shadow: black 0 0 2px;
 }
 
-.btn-new { top: 70px;}
-.btn-roll { top: 300px;}
-.btn-keep { top: 370px;}
+.btn-new {
+    top: 70px;
+}
+
+.btn-roll {
+    top: 300px;
+}
+
+.btn-keep {
+    top: 370px;
+}
 
 .dice {
     position: fixed;
@@ -115,7 +139,7 @@ button {
     height: 100px;
 }
 
-.game{
+.game {
     font-size: 100px;
     text-align: center;
     text-transform: uppercase;
@@ -126,8 +150,14 @@ button {
     font-family: Kefa;
 }
 
-.winner { background-color: rgba(0, 255, 0, 0.1); }
-.winner .player-name { font-weight: 300; color: rgba(255, 0, 0, 0.5); }
+.winner {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.winner .player-name {
+    font-weight: 300;
+    color: rgba(255, 0, 0, 0.7);
+}
 
 @keyframes gradient {
     0% {
@@ -139,4 +169,53 @@ button {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.shake {
+    animation: shake 0.82s;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.rules {
+    font-size: 15px;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    top: 92%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    color: rgba(0, 0, 0, 0.3);
+    font-family: Kefa;
+}
+
+.rules-description {
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    top: 22%;
+    left: 20%;
+    right: 20%;
+    position: fixed;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: black 0 0 10px;
+
 }
