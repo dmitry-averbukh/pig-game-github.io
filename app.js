@@ -55,7 +55,7 @@ document.querySelector(".btn-keep").addEventListener("click", function () {
     if (gameOn) {
         scores[activePlayer] += roundScore
         document.querySelector("#score-" + activePlayer).textContent = scores[activePlayer]
-        if (scores[activePlayer] >= 10) {
+        if (scores[activePlayer] >= 100) {
             gameOver()
         } else {
             nextPlayer()
